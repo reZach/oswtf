@@ -14,7 +14,8 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\OSSSTF.Models\OSSSTF.Models.csproj" />
+    <ProjectReference Include="..\OSSSTF.Models\OSWTF.Models.csproj" />
+    <ProjectReference Include="..\OSWTF.Filters\OSWTF.Filters.csproj" />
   </ItemGroup>
 
 </Project>

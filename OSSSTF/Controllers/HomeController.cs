@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OSSSTF.Models;
+using OSWTF.Filters;
 
 namespace OSSSTF.Controllers
 {
@@ -15,6 +16,8 @@ namespace OSSSTF.Controllers
             return View();
         }
 
+        [TypeFilter(typeof(ServerSideFilter),
+            Arguments = new object[] { "Namezeys" })]
         public IActionResult Privacy()
         {
             return View();
