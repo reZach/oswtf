@@ -17,7 +17,7 @@ namespace OSSSTF.Controllers
         }
 
         [TypeFilter(typeof(ServerSideFilter),
-            Arguments = new object[] { "Namezeys" })]
+            Arguments = new object[] { "A" })]
         public IActionResult Privacy()
         {
             return View();
