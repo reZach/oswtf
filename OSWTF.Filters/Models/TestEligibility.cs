@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace OSWTF.Models
 {
@@ -12,13 +10,13 @@ namespace OSWTF.Models
 
     public class TestEligibility
     {
-        public List<IndividualTestEligibility> IndividualTestEligibilities { get; set; }
-        public List<string> Errors { get; set; }
-
         public TestEligibility()
         {
             IndividualTestEligibilities = new List<IndividualTestEligibility>();
             Errors = new List<string>();
         }
+
+        public List<IndividualTestEligibility> IndividualTestEligibilities { get; set; }
+        public List<string> Errors { get; set; }
     }
 }

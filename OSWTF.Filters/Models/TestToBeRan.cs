@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace OSWTF.Models.Filter
+namespace OSWTF.Models
 {
     public class TestToBeRan
     {
@@ -12,5 +10,6 @@ namespace OSWTF.Models.Filter
         public DateTime End { get; set; }
         public string[] Exclude { get; set; }
         public bool Active { get; set; }
+        public string ForceVariation { get; set; }
     }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>OSWTF.Filters</id>
+    <version>0.0.1-alpha</version>
+    <authors>Zachary</authors>
+    <owners>Zachary</owners>
+    <license type="expression">MIT</license>    
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+      OSWTF is an open source web testing framework for .NET Core. This package is required
+      for server-side testing.
+    </description>
+    <releaseNotes>First release to NuGet.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>netcore abtesting serverside</tags>
+  </metadata>
+</package>
