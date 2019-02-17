@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OSSSTF.Models;
 using OSWTF.Filters;
+using OSWTF.Models;
 
 namespace OSSSTF.Controllers
 {
@@ -17,9 +18,11 @@ namespace OSSSTF.Controllers
         }
 
         [TypeFilter(typeof(ServerSideFilter),
-            Arguments = new object[] { "A" })]
+            Arguments = new object[] { "a" })]
         public IActionResult Privacy()
         {
+            TestEligibility a = ViewBag.Eligibilities;
+
             return View();
         }
 
