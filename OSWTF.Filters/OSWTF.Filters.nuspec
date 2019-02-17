@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>OSWTF.Filters</id>
-    <version>0.0.1-alpha</version>
+    <id>OSWTF.Server</id>
+    <version>0.0.2-alpha</version>
     <authors>Zachary</authors>
     <owners>Zachary</owners>
     <license type="expression">MIT</license>    
@@ -13,6 +13,6 @@
     </description>
     <releaseNotes>First release to NuGet.</releaseNotes>
     <copyright>Copyright 2019</copyright>
-    <tags>netcore abtesting serverside</tags>
+    <tags>netcore ab-testing server-side</tags>
   </metadata>
 </package>
