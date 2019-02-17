@@ -17,12 +17,13 @@ namespace OSWTF.Filters
         private bool isSuccessful = false;
         private List<string> preExecuteErrors = new List<string>();
         private TestEligibility eligibilities = new TestEligibility();
-        private readonly string _testName;
+        private List<TestingOptions.Test> testsToBeRan = new List<TestingOptions.Test>();
+        private readonly string[] _testNames;
         private readonly IOptions<TestingOptions> _options;
 
-        public ServerSideFilter(string testName, IOptions<TestingOptions> options)
+        public ServerSideFilter(string[] testNames, IOptions<TestingOptions> options)
         {
-            _testName = testName;
+            _testNames = testNames;
             _options = options;
 
             ParseOptions();
@@ -113,68 +114,72 @@ namespace OSWTF.Filters
         }
 
         private void ParseOptions()
-        {
-            TestingOptions.Test thisTest;
-
+        {            
             // Short-circuit
             if (_options.Value.Tests != null &&
                 _options.Value.Tests.Count > 0)
             {
-                thisTest = _options.Value.Tests.Find(t => t.Name == _testName);
+                TestingOptions.Test individualTest;
 
-                if (thisTest == null)
+                for (int i = 0; i < _testNames.Length; i++)
                 {
-                    preExecuteErrors.Add(
-                        $"Could not find the test with name '{_testName}' present in the options.");
-                    return;
-                }
+                    individualTest = _options.Value.Tests.Find(
+                        t => t.Name == _testNames[i]);
+
+                    if (individualTest == null)
+                    {
+                        preExecuteErrors.Add(
+                            $"Could not find the test with name '{_testNames[i]}' present in the options.");
+                        break;
+                    }
+
+                    testsToBeRan.Add(individualTest);
+
+                    // Validate each of the tests are formatted correctly
+                    if (individualTest.Name == null)
+                    {
+                        preExecuteErrors.Add(
+                            $"The key 'Name' does not exist for test '{individualTest.Name}' in options.");
+                        return;
+                    }
+
+                    if (individualTest.Split == null)
+                    {
+                        preExecuteErrors.Add(
+                            $"The key 'Split' does not exist for test '{individualTest.Name}' in options.");
+                        return;
+                    }
+
+                    if (individualTest.Begin == default(DateTime))
+                    {
+                        preExecuteErrors.Add(
+                            $"The key 'Begin' does not exist for test '{individualTest.Name}' in options.");
+                        return;
+                    }
+
+                    try
+                    {
+                        // Parse values
+                        trafficSplit = Array.ConvertAll(
+                            thisTest.Split.Replace(" ", "").Split(','), Convert.ToInt32);
+                        excluded = thisTest.Exclude ?? new string[0];
+                        expires = thisTest.End != null ? thisTest.End : (DateTime?)null;
+                        cookiePrefix = _options.Value.Prefix ?? cookiePrefix;
+
+                        isSuccessful = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        preExecuteErrors.Add(
+                            $"Error occured while parsing options: '{ex.InnerException}'.");
+                        return;
+                    }
+                }           
             }
             else
             {
                 preExecuteErrors.Add("Could not bind to any tests in options.");
-                return;
-            }
-                
-
-            // Validate test is formatted correctly
-            if (thisTest.Name == null)
-            {
-                preExecuteErrors.Add(
-                    $"The key 'Name' does not exist for test '{_testName}' in options.");
-                return;
-            }
-
-            if (thisTest.Split == null)
-            {
-                preExecuteErrors.Add(
-                    $"The key 'Split' does not exist for test '{_testName}' in options.");
-                return;
-            }
-
-            if (thisTest.Begin == default(DateTime))
-            {
-                preExecuteErrors.Add(
-                    $"The key 'Begin' does not exist for test '{_testName}' in options.");
-                return;
-            }
-
-
-            try
-            {
-                // Parse values
-                trafficSplit = Array.ConvertAll(
-                    thisTest.Split.Replace(" ", "").Split(','), Convert.ToInt32);
-                excluded = thisTest.Exclude ?? new string[0];
-                expires = thisTest.End != null ? thisTest.End : (DateTime?)null;
-                cookiePrefix = _options.Value.Prefix ?? cookiePrefix;
-
-                isSuccessful = true;
-            }
-            catch (Exception ex)
-            {
-                preExecuteErrors.Add(
-                    $"Error occured while parsing options: '{ex.InnerException}'.");
-            }
+            }                
         }
 
         private void AssignViewBagProperty(ActionExecutingContext context)

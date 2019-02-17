@@ -18,7 +18,7 @@ namespace OSSSTF.Controllers
         }
 
         [TypeFilter(typeof(ServerSideFilter),
-            Arguments = new object[] { "a" })]
+            Arguments = new object[] { new string[] { "a" } })]
         public IActionResult Privacy()
         {
             TestEligibility a = ViewBag.Eligibilities;
