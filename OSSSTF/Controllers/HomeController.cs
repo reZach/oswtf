@@ -5,8 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OSSSTF.Models;
-using OSWTF.Filters;
-using OSWTF.Models;
+using OSWTF.Server;
+using OSWTF.Server.Models;
+
+//using OSWTF.Filters;
 
 namespace OSSSTF.Controllers
 {
@@ -17,7 +19,7 @@ namespace OSSSTF.Controllers
             return View();
         }
 
-        [TypeFilter(typeof(ServerSideFilter),
+        [TypeFilter(typeof(ServerSideTestFilter),
             Arguments = new object[] { new string[] { "a" } })]
         public IActionResult Privacy()
         {

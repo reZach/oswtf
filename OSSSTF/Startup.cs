@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OSSSTF.Data;
-using OSWTF.Filters;
+using OSWTF.Server.Models;
 
 namespace OSSSTF
 {

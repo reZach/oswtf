@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace OSWTF.Filters
+namespace OSWTF.Server.Models
 {
     public class TestingOptions
     {

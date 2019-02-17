@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OSWTF.Models
+namespace OSWTF.Server.Models
 {
     public class TestToBeRan
     {

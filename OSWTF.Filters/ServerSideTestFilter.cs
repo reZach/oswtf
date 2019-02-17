@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Options;
-using OSWTF.Models;
+using OSWTF.Server.Models;
 
-namespace OSWTF.Filters
+namespace OSWTF.Server
 {
-    public class ServerSideFilter : IActionFilter
+    public class ServerSideTestFilter : IActionFilter
     {
         private bool isSuccessful;
         private readonly IOptions<TestingOptions> _options;
@@ -18,7 +18,7 @@ namespace OSWTF.Filters
         private readonly List<string> preExecuteErrors = new List<string>();
         private readonly List<TestToBeRan> testsToBeRan = new List<TestToBeRan>();
 
-        public ServerSideFilter(string[] testNames, IOptions<TestingOptions> options)
+        public ServerSideTestFilter(string[] testNames, IOptions<TestingOptions> options)
         {
             _testNames = testNames;
             _options = options;
