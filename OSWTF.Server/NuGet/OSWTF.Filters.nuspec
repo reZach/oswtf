@@ -2,7 +2,8 @@
 <package >
   <metadata>
     <id>OSWTF.Server</id>
-    <version>0.0.3-alpha</version>
+    <title>OSWTF.Server</title>
+    <version>0.0.5-alpha</version>
     <authors>Zachary</authors>
     <owners>Zachary</owners>
     <license type="expression">MIT</license>    
@@ -10,8 +11,8 @@
     <description>
       OSWTF is an open source web testing framework for .NET Core. This package is required
       for server-side testing.
-    </description>
-    <releaseNotes>Cleaning up namespaces.</releaseNotes>
+    </description>    
+    <releaseNotes>Actually using the Begin value of the test options.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>netcore ab-testing server-side</tags>
   </metadata>

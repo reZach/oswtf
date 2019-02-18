@@ -95,15 +95,18 @@ namespace OSWTF.Server
                             }
 
                             // Create the cookie on the user's response
-                            context.HttpContext.Response.Cookies.Append(cookieName,
-                                cookieValue, new CookieOptions
-                                {
-                                    Domain = context.HttpContext.Request.Host.Host,
-                                    Path = "/",
-                                    Expires = testsToBeRan[i].End,
-                                    Secure = context.HttpContext.Request.IsHttps,
-                                    IsEssential = true
-                                });
+                            if (DateTime.Now >= testsToBeRan[i].Begin)
+                            {
+                                context.HttpContext.Response.Cookies.Append(cookieName,
+                                    cookieValue, new CookieOptions
+                                    {
+                                        Domain = context.HttpContext.Request.Host.Host,
+                                        Path = "/",
+                                        Expires = testsToBeRan[i].End,
+                                        Secure = context.HttpContext.Request.IsHttps,
+                                        IsEssential = true
+                                    });
+                            }
                         }
                         else
                         {

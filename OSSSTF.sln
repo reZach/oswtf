@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSWTF.Models", "OSWTF.Model
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSWTF.Web", "OSWTF.Web\OSWTF.Web.csproj", "{9B7203BD-A3F1-4C54-8CCC-DC1D40786D23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSWTF.Demo", "OSWTF.Demo\OSWTF.Demo.csproj", "{7CE14763-0A52-4FDF-AA7F-A631FAA731CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{9B7203BD-A3F1-4C54-8CCC-DC1D40786D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B7203BD-A3F1-4C54-8CCC-DC1D40786D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B7203BD-A3F1-4C54-8CCC-DC1D40786D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CE14763-0A52-4FDF-AA7F-A631FAA731CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CE14763-0A52-4FDF-AA7F-A631FAA731CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CE14763-0A52-4FDF-AA7F-A631FAA731CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CE14763-0A52-4FDF-AA7F-A631FAA731CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
