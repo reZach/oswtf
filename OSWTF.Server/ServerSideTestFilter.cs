@@ -48,7 +48,7 @@ namespace OSWTF.Server
                 var passesExclusionTest = true;
                 
                 // Only process logic if test is active
-                if (!testsToBeRan[i].Active)
+                if (!testsToBeRan[i].TurnOff)
                 {
                     // If user is in any of the excluded test, don't run this test;
                     // don't run this logic if we are forcing a variation for a test
@@ -203,7 +203,7 @@ namespace OSWTF.Server
                                 ? new DateTime(3000, 1, 1)
                                 : individualTest.End,
                             Exclude = individualTest.Exclude ?? new string[0],
-                            Active = individualTest.Active,
+                            TurnOff = individualTest.TurnOff,
                             ForceVariation = individualTest.ForceVariation
                         });
 
