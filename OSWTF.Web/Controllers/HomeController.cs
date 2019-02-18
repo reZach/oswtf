@@ -23,7 +23,8 @@ namespace OSWTF.Web.Controllers
             Arguments = new object[] { new string[] { "a" } })]
         public IActionResult Privacy()
         {
-            TestEligibility a = ViewBag.Eligibilities;
+            string variation = ViewBag.ServerSideTests["a"];
+            
 
             return View();
         }

@@ -14,7 +14,7 @@ namespace OSWTF.Server
         private readonly IOptions<TestingOptions> _options;
         private readonly string[] _testNames;
         private readonly string _cookiePrefix = "oswtf_";
-        private readonly TestEligibility eligibilities = new TestEligibility();        
+        private readonly Result result = new Result();        
         private readonly List<string> preExecuteErrors = new List<string>();
         private readonly List<TestToBeRan> testsToBeRan = new List<TestToBeRan>();
 
@@ -35,7 +35,7 @@ namespace OSWTF.Server
         {
             if (!isSuccessful)
             {
-                eligibilities.Errors.AddRange(preExecuteErrors);
+                result.Errors.AddRange(preExecuteErrors);
                 AssignViewBagProperty(context);
                 return;
             }
@@ -123,7 +123,7 @@ namespace OSWTF.Server
                 }
 
                 // Assign value
-                eligibilities.IndividualTestEligibilities.Add(new IndividualTestEligibility
+                result.IndividualResults.Add(new IndividualResult
                 {
                     TestName = testsToBeRan[i].Name,
                     Variation = cookieValue
@@ -223,7 +223,7 @@ namespace OSWTF.Server
         private void AssignViewBagProperty(ActionExecutingContext context)
         {
             // If our controller is set up properly, set the value of our cookie            
-            if (context.Controller is Controller controller) controller.ViewBag.Eligibilities = eligibilities;
+            if (context.Controller is Controller controller) controller.ViewBag.ServerSideTests = result;
         }
     }
 }
