@@ -10,13 +10,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="OSWTF.Server" Version="0.0.2-alpha" />
+    <PackageReference Include="OSWTF.Server" Version="0.0.3-alpha" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <ProjectReference Include="..\OSSSTF.Models\OSWTF.Models.csproj" />
-    <ProjectReference Include="..\OSWTF.Filters\OSWTF.Server.csproj" />
+    <ProjectReference Include="..\OSWTF.Models\OSWTF.Models.csproj" />
   </ItemGroup>
 
 </Project>

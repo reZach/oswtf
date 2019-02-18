@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OSSSTF.Models
+namespace OSWTF.Models
 {
     public class UrlRule
     {

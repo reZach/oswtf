@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSWTF.Web", "OSSSTF\OSWTF.Web.csproj", "{FBC21900-5B38-44F7-BE0E-F449D72BAFAF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSWTF.Models", "OSSSTF.Models\OSWTF.Models.csproj", "{2B84E00C-D6BF-47BA-BB77-CDC6F92A47C7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CDD6E082-91A1-4197-9A18-D3A6B7EF5F2F}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.txt = LICENSE.txt
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSWTF.Server", "OSWTF.Filters\OSWTF.Server.csproj", "{682C076E-E347-4541-81D4-9F9B477A01DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSWTF.Server", "OSWTF.Server\OSWTF.Server.csproj", "{63EA78A8-87E9-47F6-88D8-141940453410}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSWTF.Models", "OSWTF.Models\OSWTF.Models.csproj", "{4EE93098-1EA8-4DEF-B8D3-5FDA1072F3C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OSWTF.Web", "OSWTF.Web\OSWTF.Web.csproj", "{9B7203BD-A3F1-4C54-8CCC-DC1D40786D23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,18 +20,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FBC21900-5B38-44F7-BE0E-F449D72BAFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBC21900-5B38-44F7-BE0E-F449D72BAFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBC21900-5B38-44F7-BE0E-F449D72BAFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBC21900-5B38-44F7-BE0E-F449D72BAFAF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B84E00C-D6BF-47BA-BB77-CDC6F92A47C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B84E00C-D6BF-47BA-BB77-CDC6F92A47C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B84E00C-D6BF-47BA-BB77-CDC6F92A47C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B84E00C-D6BF-47BA-BB77-CDC6F92A47C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{682C076E-E347-4541-81D4-9F9B477A01DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{682C076E-E347-4541-81D4-9F9B477A01DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{682C076E-E347-4541-81D4-9F9B477A01DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{682C076E-E347-4541-81D4-9F9B477A01DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63EA78A8-87E9-47F6-88D8-141940453410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63EA78A8-87E9-47F6-88D8-141940453410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63EA78A8-87E9-47F6-88D8-141940453410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63EA78A8-87E9-47F6-88D8-141940453410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE93098-1EA8-4DEF-B8D3-5FDA1072F3C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE93098-1EA8-4DEF-B8D3-5FDA1072F3C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE93098-1EA8-4DEF-B8D3-5FDA1072F3C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE93098-1EA8-4DEF-B8D3-5FDA1072F3C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B7203BD-A3F1-4C54-8CCC-DC1D40786D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7203BD-A3F1-4C54-8CCC-DC1D40786D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7203BD-A3F1-4C54-8CCC-DC1D40786D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7203BD-A3F1-4C54-8CCC-DC1D40786D23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

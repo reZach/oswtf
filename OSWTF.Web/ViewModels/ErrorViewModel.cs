@@ -1,6 +1,6 @@
 using System;
 
-namespace OSSSTF.Models
+namespace OSWTF.Web.Models
 {
     public class ErrorViewModel
     {

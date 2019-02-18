@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OSSSTF.Models
+namespace OSWTF.Models
 {
     public class UrlRuleType
     {

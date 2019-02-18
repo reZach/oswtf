@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using OSSSTF.Models;
+using OSWTF.Models;
+using OSWTF.Server.Models;
 
-namespace OSSSTF.Data
+namespace OSWTF.Web.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -14,7 +15,7 @@ namespace OSSSTF.Data
         {            
         }
 
-        public DbSet<Test> Tests { get; set; }
+        public DbSet<TestingOptions.Test> Tests { get; set; }
         public DbSet<Template> Templates { get; set; }
         public DbSet<UrlRule> UrlRules { get; set; }
         public DbSet<UrlRuleType> UrlRuleTypes { get; set; }

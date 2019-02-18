@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OSSSTF.Data;
+using OSWTF.Web.Data;
 using OSWTF.Server.Models;
 
-namespace OSSSTF
+namespace OSWTF.Web
 {
     public class Startup
     {
